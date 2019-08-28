@@ -1,0 +1,17 @@
+/* @flow */
+
+function identityP<T>(value: T): T {
+  return value;
+}
+
+function identityM<T>(value: T): T {
+  return value;
+}
+
+function testP() {
+  return identityP(1) + 42;
+}
+  
+function testM() {
+  return identityM(true);
+}

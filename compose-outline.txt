@@ -1,0 +1,49 @@
+Talk outline:
+- Background
+  - Type systems help us reason about programs
+    - Designers try and reduce # of annotations
+    - Type inference
+      - algorithm to turn unannotated program in annotated program
+  - Different approaches
+    - (Global) type inference
+      1. tag each element of syntax
+      2. record relationships between syntax as constraints
+      3. solve constratins
+      - eg. SML, F#, Flow, Haskell
+        - Hindley-Milner/Damas-Milner
+          - sweet spot that allows expressive programs (polymorphism)
+            but also can infer all annotations
+      - Advantages:
+        - Potentially eliminates all annotations
+      - Disadvantages:
+        - difficult to extend to new features
+    - Local type inference
+      1. Require top-level annotation
+      2. Push type information "down" the syntax tree for
+         type checking
+      3. Propagate type info "up" syntax tree for type synthesis/inference
+      - eg. TypeScript, Typed Racket, Java, C++, C, 
+      - Advantages:
+        - Very flexible and robust in supporting new type system features
+      - Disadvantages:
+        - Many annotations needed
+
+- Problems
+  - subtyping is important
+    - objects
+      - forget keys, less restrictions on keys
+    - does not 
+  - Many approaches to type inference
+    - subtyping is important 
+
+- inline vs output flipping
+- checking (map (fn [x] x) [1 2 3])
+  - w/ global inference
+    - bag of constraints
+  - w/ bidirectional checking
+    - not enough information
+  - w/ symbolic closures
+    - undecidable and powerful
+- MLsub
+- Flow
+- Bidirectional vs Global inference

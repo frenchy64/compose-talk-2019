@@ -1,0 +1,51 @@
+/* @flow */
+
+// inferred as monomorphic if not annotated.
+// MLsub infers a principal polymorphic type for comp,
+// Flow never infers polymorphic types.
+/*function comp(f, g) {
+  return x => f(g(x));
+}*/
+
+function comp<A,B,C>(f : B=>C, g : A=>B) : A=>C {
+  return x => f(g(x));
+}
+
+function identity<T>(value: T): T {
+  return value;
+}
+
+function test() {
+  var f = a => a(1);
+  var g = x => x;
+  var h = x => x;
+  [g, h].map(f);
+}
+  
+function test3() : Array<number> {
+  var f = a => a(1);
+  var g = identity;
+  var h = identity;
+  var i = comp(g,h);
+  return [i].map(f);
+}
+  
+function test3_1() : Array<boolean> {
+  var f = a => a(true);
+  var g = identity;
+  var h = identity;
+  var i = comp(g,h);
+  return [i].map(f);
+}
+
+function test4() : number {
+  var is = [1,2,3];
+  var rf = (total,num) => total+num;
+  return is.reduce(rf);
+}
+/*
+function test5() {
+  var f = x=>x;
+  var g = (x : String) => 1;
+  return [f(1), g(f("a"))];
+}*/
