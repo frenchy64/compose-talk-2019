@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Projects/compose-2019-talk/app_a.clj.html</title>
+<meta name="Generator" content="Vim/8.1">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="clojure">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="none">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+* { font-size: 1em; }
+.LineNr { color: #ffff00; }
+.level14c { color: #00ffff; }
+.level15c { color: #ff6060; }
+.level16c { color: #ff6060; font-weight: bold; }
+.Constant { color: #ff6060; }
+.Identifier { color: #00ffff; }
+.Statement { color: #ffff00; }
+.PreProc { color: #ff40ff; }
+.level12c { color: #8080ff; }
+.level13c { color: #00ff00; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr">1 </span><span class="level16c">(</span><span class="PreProc">defn</span> app-a <span class="level15c">[</span>f m<span class="level15c">]</span> <span class="level15c">(</span>f <span class="level14c">(</span><span class="Statement">:a</span> m<span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+<span id="L2" class="LineNr">2 </span>
+<span id="L3" class="LineNr">3 </span><span class="level16c">(</span>deftest app-a-test
+<span id="L4" class="LineNr">4 </span>  <span class="level15c">(</span>is <span class="level14c">(</span><span class="Identifier">=</span> <span class="level13c">(</span>app-a <span class="Identifier">inc</span> <span class="level12c">{</span><span class="Statement">:a</span> <span class="Constant">42</span><span class="level12c">}</span><span class="level13c">)</span>
+<span id="L5" class="LineNr">5 </span>         <span class="Constant">43</span><span class="level14c">)</span><span class="level15c">)</span>
+<span id="L6" class="LineNr">6 </span>  <span class="level15c">(</span>is <span class="level14c">(</span><span class="Identifier">=</span> <span class="level13c">(</span>app-a <span class="Identifier">dec</span> <span class="level12c">{</span><span class="Statement">:a</span> <span class="Constant">42</span><span class="level12c">}</span><span class="level13c">)</span>
+<span id="L7" class="LineNr">7 </span>         <span class="Constant">41</span><span class="level14c">)</span><span class="level15c">)</span><span class="level16c">)</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
